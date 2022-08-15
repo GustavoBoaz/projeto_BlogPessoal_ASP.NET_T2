@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
+using BlogAPI.Src.Utilidades;
 
 namespace BlogAPI.Src.Modelos
 {
@@ -27,6 +28,9 @@ namespace BlogAPI.Src.Modelos
         public string Senha { get; set; }
 
         public string Foto { get; set; }
+
+        [Required]
+        public TipoUsuario Tipo { get; set; }
 
         [JsonIgnore, InverseProperty("Criador")]
         public List<Postagem> MinhasPostagens { get; set; }
