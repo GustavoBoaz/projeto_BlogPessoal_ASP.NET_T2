@@ -36,6 +36,26 @@ namespace BlogAPI.Src.Controladores
 
         #region Métodos
 
+        /// <summary>
+        /// Criar novo Usuario
+        /// </summary>
+        /// <param name="usuario">Contrutor para criar usuario</param>
+        /// <returns>ActionResult</returns>
+        /// <remarks>
+        /// Exemplo de requisição:
+        ///
+        ///     POST /api/Usuarios/cadastrar
+        ///     {
+        ///        "nome": "Gustavo Boaz",
+        ///        "email": "gustavo@domain.com",
+        ///        "senha": "134652",
+        ///        "foto": "URLFOTO",
+        ///        "tipo": "NORMAL"
+        ///     }
+        ///
+        /// </remarks>
+        /// <response code="201">Retorna usuario criado</response>
+        /// <response code="401">E-mail ja cadastrado</response>
         [HttpPost]
         [AllowAnonymous]
         public async Task<ActionResult> NovoUsuarioAsync([FromBody] Usuario usuario)
